@@ -8,7 +8,7 @@ import { graphqlHTTP } from "express-graphql";
 
 import { GraphQLSchema } from "graphql";
 
-import { RootQueryType, RootMutationType } from "./helpers/GraphQLObjectTypes";
+import { RootQueryType, RootMutationType } from "./GraphQLObjectTypes";
 
 const app = express();
 
@@ -22,7 +22,7 @@ app.use(
   "/graphql",
 
   graphqlHTTP({
-    graphiql: true,
+    pretty: true,
 
     schema,
   })

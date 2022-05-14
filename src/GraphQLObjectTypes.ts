@@ -1,4 +1,4 @@
-import { authors, books } from "../dummyData";
+import { authors, books } from "./dummyData";
 
 import {
   GraphQLInt,
@@ -48,7 +48,7 @@ const RootQueryType: GraphQLObjectType = new GraphQLObjectType({
 
       description: "List of all authors",
 
-      resolve: () => authors,
+      resolve: () => authors.sort(() => 0.5 - Math.random()),
     },
 
     books: {
@@ -56,7 +56,7 @@ const RootQueryType: GraphQLObjectType = new GraphQLObjectType({
 
       description: "List of all books",
 
-      resolve: () => books,
+      resolve: () => books.sort(() => 0.5 - Math.random()),
     },
   }),
 });
